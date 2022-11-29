@@ -30,7 +30,7 @@ app.use(cors({
   'http://cohc.onrender.com', 'http://cohc-server.onrender.com',
   'http://localhost:3000', 'http://localhost:3009',
   'https://cohc.herokuapp.com/'],
-    // credentials: true, // enable set cookie
+    credentials: true, // enable set cookie
 }));
 
 // Connect to database
@@ -40,16 +40,6 @@ connectToDb();
 app.post('/signup', usersController.signup);
 app.post('/login', usersController.login);
 app.get('/logout', usersController.logout);
-app.get('/check-auth', usersController.checkAuth);
-app.get('/user', usersController.fetchUser);
-app.get('/allUsers', adminController.fetchAllUsers);
-app.delete("/users/:id", adminController.deleteUser);
-app.get('/admin', usersController.fetchUser);
-app.get("/props", propsController.fetchProps);
-app.get("/props/:id", propsController.fetchProp);
-app.post("/props", propsController.createProp);
-app.put("/props/:id", propsController.updateProp);
-app.delete("/props/:id", propsController.deleteProp);
 // app.get('/check-auth', requireAuth, usersController.checkAuth);
 // app.get('/user', requireAuth, usersController.fetchUser);
 // app.get('/allUsers', requireAuth, adminController.fetchAllUsers);
