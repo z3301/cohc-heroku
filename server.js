@@ -30,8 +30,7 @@ app.use(cors({
   'http://cohc.onrender.com', 'http://cohc-server.onrender.com',
   'http://localhost:3000', 'http://localhost:3009',
   'https://cohc.herokuapp.com/'],
-  
-  credentials: false, // enable set cookie
+    // credentials: true, // enable set cookie
 }));
 
 // Connect to database
