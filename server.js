@@ -25,13 +25,14 @@ const app = express();
 app.use(express.json( { limit: "50mb" } ));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-// app.use(cors({
-//   origin: ['https://cohc.onrender.com', 'https://cohc-server.onrender.com',
-//   'http://cohc.onrender.com', 'http://cohc-server.onrender.com',
-//   'http://localhost:3000', 'http://localhost:3009',
-//   'https://cohc.herokuapp.com/'],
-//   credentials: true, // enable set cookie
-// }));
+app.use(cors({
+  origin: ['https://cohc.onrender.com', 'https://cohc-server.onrender.com',
+  'http://cohc.onrender.com', 'http://cohc-server.onrender.com',
+  'http://localhost:3000', 'http://localhost:3009',
+  'https://cohc.herokuapp.com/'],
+  
+  credentials: false, // enable set cookie
+}));
 
 // Connect to database
 connectToDb();
